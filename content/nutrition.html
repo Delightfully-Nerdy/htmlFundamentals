@@ -9,6 +9,7 @@
 
     <style>
         table {
+            /* try with one margin set to 0 and the other at auto. */
             margin-left: auto;
             margin-right: auto;
         }
@@ -18,7 +19,8 @@
             border-width: 1px;
             border-style: dashed;
             padding: 5px;
-            margin: 5px;
+            /*Notice the margin doesn't do anythign to our display */
+            margin: 100px;
         }
     </style>
 </head>
@@ -26,8 +28,29 @@
 <body>
 
     <header>
-        <h1>Wired Brain Coffee</h1>
-        <h2>Nutrition Information</h2>
+        <picture style="float:left">
+            
+            <!--
+            <source type="image/jpeg" srcset="wired-brain-coffee-logo-250.jpg 250w, wired-brain-coffee-logo.jpg 500w"
+                sizes="(max-width: 500px) 15vw, 25vw" />
+            <source type="image/png" srcset="wired-brain-coffee-logo-250.png 250w, wired-brain-coffee-logo.png 500w"
+                sizes="(max-width: 500px) 15vw, 25vw" />
+            
+-->
+            
+            <source media="(min-width:750px" srcset="wired-brain-coffee-logo-250.jpg 250w, wired-brain-coffee-logo.jpg 500w"
+                sizes="(max-width: 1000px) 25vw, (min-width: 1000px) 15vw" />
+            <source srcset="wired-brain-coffee-logo-250.png 250w, wired-brain-coffee-logo.png 500w"
+                sizes="(max-width: 500px) 15vw, 25vw" />
+                
+            <img src="wired-brain-coffee-logo.png" alt="Wired Brain Coffee Logo" />
+        </picture>
+
+        <div style="float:left; margin-left:15px">
+            <h1>Wired Brain Coffee</h1>
+            <h2>Nutrition Information</h2>
+        </div>
+        <div style="clear:both" />
     </header>
 
     <section id="nutrition">
@@ -46,13 +69,14 @@
                     <th></th>
                     <th></th>
                     <th colspan="2">Carbohydrates</th>
+
                 </tr>
                 <tr>
-                    <!-- <th>Drink</th> -->
+                    <!--<th>Drink</th>-->
                     <th>Serving Size</th>
                     <th>Calories</th>
-                    <th>Fat</th>
-                    <th>Protien</th>
+                    <th>Fat (g)</th>
+                    <th>Protein (g)</th>
                     <th>Sugar (g)</th>
                     <th>Fiber (g)</th>
                 </tr>
@@ -93,7 +117,7 @@
     </section>
 
     <footer>
-        &copy; Dalitso Kasonde
+        &copy; Matt Milner
     </footer>
 </body>
 
